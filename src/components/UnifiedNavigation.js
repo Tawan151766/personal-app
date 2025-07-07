@@ -47,7 +47,7 @@ export default function UnifiedNavigation({
   };
 
   return (
-    <div className={`flex gap-2 border-t border-[#e7edf4] bg-slate-50 px-4 pb-3 pt-2 ${className}`}>
+    <div className={`flex gap-2 border-t border-[#e7edf4] bg-slate-50 px-4 pb-3 pt-2 md:flex-col md:gap-4 md:border-none md:bg-transparent md:p-0 ${className}`}>
       {items.map((item) => {
         const active = isActive(item);
         const colorClass = active ? activeColor : inactiveColor;
@@ -55,13 +55,14 @@ export default function UnifiedNavigation({
         return (
           <a
             key={item.id}
-            className={`just flex flex-1 flex-col items-center justify-end gap-1 ${active ? 'rounded-full' : ''} ${colorClass}`}
+            className={`just flex flex-1 flex-col items-center justify-end gap-1 md:flex-row md:justify-start md:px-4 md:py-3 md:rounded-lg ${active ? 'rounded-full md:bg-[#e7edf4]' : 'md:hover:bg-gray-100'} ${colorClass}`}
             href={item.href}
             title={item.label}
           >
-            <div className={`${colorClass} flex h-8 items-center justify-center`}>
+            <div className={`${colorClass} flex h-8 items-center justify-center md:mr-3`}>
               <Icon name={item.icon} size="24px" />
             </div>
+            <span className="hidden md:block text-sm font-medium">{item.label}</span>
           </a>
         );
       })}

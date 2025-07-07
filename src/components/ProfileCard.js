@@ -12,23 +12,23 @@ export default function ProfileCard({
 }) {
   return (
     <>
-      <div className="flex p-4 @container">
-        <div className="flex w-full flex-col gap-4 items-center">
-          <div className="flex gap-4 flex-col items-center">
+      <div className="flex p-4 lg:p-8 @container">
+        <div className="flex w-full flex-col lg:flex-row gap-4 lg:gap-8 items-center lg:items-start">
+          <div className="flex gap-4 flex-col lg:flex-row items-center lg:items-start">
             <div
-              className="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32"
+              className="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32 lg:min-h-48 lg:w-48 flex-shrink-0"
               style={{
                 backgroundImage: `url("${profileImage}")`
               }}
             ></div>
-            <div className="flex flex-col items-center justify-center justify-center">
-              <p className="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] text-center">
+            <div className="flex flex-col items-center lg:items-start justify-center">
+              <p className="text-[#0d141c] text-[22px] lg:text-[32px] font-bold leading-tight tracking-[-0.015em] text-center lg:text-left">
                 {name}
               </p>
-              <p className="text-[#49739c] text-base font-normal leading-normal text-center">
+              <p className="text-[#49739c] text-base lg:text-lg font-normal leading-normal text-center lg:text-left">
                 {title}
               </p>
-              <p className="text-[#49739c] text-base font-normal leading-normal text-center">
+              <p className="text-[#49739c] text-base lg:text-lg font-normal leading-normal text-center lg:text-left">
                 {experience}
               </p>
             </div>
@@ -36,14 +36,14 @@ export default function ProfileCard({
         </div>
       </div>
       {description && (
-        <p className="text-[#0d141c] text-base font-normal leading-normal pb-3 pt-1 px-4 text-center">
+        <p className="text-[#0d141c] text-base lg:text-lg font-normal leading-normal pb-3 pt-1 px-4 lg:px-8 text-center lg:text-left max-w-4xl lg:mx-0 mx-auto">
           {description}
         </p>
       )}
       {showButton && buttonText && (
-        <div className="flex px-4 py-3 justify-center">
+        <div className="flex px-4 lg:px-8 py-3 justify-center lg:justify-start">
           <button 
-            className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0c7ff2] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]"
+            className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 lg:h-12 px-4 lg:px-6 bg-[#0c7ff2] text-slate-50 text-sm lg:text-base font-bold leading-normal tracking-[0.015em]"
             onClick={onButtonClick}
           >
             <span className="truncate">{buttonText}</span>

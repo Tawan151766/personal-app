@@ -2,7 +2,7 @@ import SkillTag from "./SkillTag";
 
 export default function SkillsList({ skills = [] }) {
   return (
-    <div className="flex gap-3 p-3 flex-wrap pr-4">
+    <div className="flex gap-3 p-3 lg:p-6 flex-wrap pr-4 lg:pr-6">
       {skills.map((skill, index) => (
         <SkillTag key={index} skill={skill} />
       ))}

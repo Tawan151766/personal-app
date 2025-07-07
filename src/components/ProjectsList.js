@@ -2,7 +2,7 @@ import ProjectCard from "./ProjectCard";
 
 export default function ProjectsList({ projects = [], onProjectClick }) {
   return (
-    <div>
+    <div className="lg:grid lg:grid-cols-1 xl:grid-cols-2 lg:gap-6">
       {projects.map((project, index) => (
         <ProjectCard
           key={index}

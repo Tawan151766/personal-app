@@ -60,16 +60,16 @@ export default function ProductPage({ params }) {
     <ProjectDetailLayout onBackClick={handleBackClick}>
       <ProjectHero image={projectData.heroImage} title={projectData.title} />
 
-      <h1 className="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 text-left pb-3 pt-5">
+      <h1 className="text-[#0d141c] text-[22px] lg:text-[32px] font-bold leading-tight tracking-[-0.015em] px-4 lg:px-6 text-left pb-3 pt-5 lg:pt-8">
         {projectData.title} {id}
       </h1>
 
-      <p className="text-[#0d141c] text-base font-normal leading-normal pb-3 pt-1 px-4">
+      <p className="text-[#0d141c] text-base lg:text-lg font-normal leading-normal pb-3 pt-1 px-4 lg:px-6 max-w-4xl">
         {projectData.description}
       </p>
 
       <Section title="My Role">
-        <p className="text-[#0d141c] text-base font-normal leading-normal pb-3 pt-1 px-4">
+        <p className="text-[#0d141c] text-base lg:text-lg font-normal leading-normal pb-3 pt-1 px-4 lg:px-6 max-w-4xl">
           {projectData.role}
         </p>
       </Section>
