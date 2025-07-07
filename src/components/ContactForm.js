@@ -89,7 +89,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
   };
 
   // Enhanced validation with detailed feedback
-  const validateField = (name, value) => {
+  const validateField = useCallback((name, value) => {
     const rules = VALIDATION_RULES[name];
     if (!rules) return "";
 
@@ -118,7 +118,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
     }
 
     return "";
-  };
+  }, [tValidation]);
 
   const validateForm = useCallback(() => {
     const newErrors = {};
@@ -132,7 +132,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
-  }, [formData]);
+  }, [formData, validateField]);
 
   // Check rate limiting
   const checkRateLimit = () => {

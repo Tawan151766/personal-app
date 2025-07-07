@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Inter, Noto_Sans } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import { NextIntlClientProvider } from 'next-intl';
@@ -7,6 +7,13 @@ import { getMessages } from 'next-intl/server';
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  weight: ["400", "500", "700", "900"],
+});
+
+const notoSans = Noto_Sans({
+  subsets: ["latin"],
+  variable: "--font-noto-sans",
+  weight: ["400", "500", "700", "900"],
 });
 
 export const metadata = {
@@ -18,23 +25,13 @@ export default async function RootLayout({ children }) {
   const messages = await getMessages();
 
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${notoSans.variable}`}>
       <head>
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900"
-        />
         {/* Optional: Tailwind CDN plugins if you really need them (not recommended in production) */}
         <Script src="https://cdn.tailwindcss.com?plugins=forms,container-queries" strategy="beforeInteractive" />
       </head>
       <body
-        className="antialiased"
-        style={{ fontFamily: 'Inter, "Noto Sans", sans-serif' }}
+        className={`antialiased ${inter.className}`}
       >
         <NextIntlClientProvider messages={messages}>
           {children}
