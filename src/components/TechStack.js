@@ -1,0 +1,35 @@
+export default function TechStack({ technologies = [] }) {
+  // Create grid items - each technology takes one cell
+  const gridItems = [];
+  
+  // Add category headers and technologies in the order provided
+  technologies.forEach((tech, index) => {
+    gridItems.push(
+      <div key={index} className="flex flex-col gap-1 border-t border-solid border-t-[#cedbe8] py-4 pr-2">
+        <p className="text-[#49739c] text-sm font-normal leading-normal">
+          {tech.category || ''}
+        </p>
+        <p className="text-[#0d141c] text-sm font-normal leading-normal">
+          {tech.name || ''}
+        </p>
+      </div>
+    );
+  });
+
+  // Fill remaining cells to complete the grid if needed
+  const totalCells = Math.ceil(gridItems.length / 2) * 2;
+  for (let i = gridItems.length; i < totalCells; i++) {
+    gridItems.push(
+      <div key={`empty-${i}`} className="flex flex-col gap-1 border-t border-solid border-t-[#cedbe8] py-4 pr-2">
+        <p className="text-[#49739c] text-sm font-normal leading-normal"></p>
+        <p className="text-[#0d141c] text-sm font-normal leading-normal"></p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-4 grid grid-cols-2">
+      {gridItems}
+    </div>
+  );
+}
