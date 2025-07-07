@@ -19,3 +19,6 @@ export { default as ProjectHero } from './ProjectHero';
 export { default as TechStack } from './TechStack';
 export { default as ProjectGallery } from './ProjectGallery';
 export { default as ProjectDetailLayout } from './ProjectDetailLayout';
+export { default as ContactForm } from './ContactForm';
+export { default as SocialLinks } from './SocialLinks';
+export { default as ContactLayout } from './ContactLayout';
