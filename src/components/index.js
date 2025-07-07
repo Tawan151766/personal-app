@@ -7,6 +7,7 @@ export { default as Icon } from './Icon';
 export { default as PageHeader } from './PageHeader';
 export { default as Section } from './Section';
 export { default as SkillTag } from './SkillTag';
+export { default as SkillIcon } from './SkillIcon';
 export { default as SkillsList } from './SkillsList';
 export { default as InfoCard } from './InfoCard';
 export { default as AboutNavigation } from './AboutNavigation';
