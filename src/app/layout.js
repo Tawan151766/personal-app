@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Stitch Design - Portfolio",
-  description: "Ethan Carter - Full-Stack Developer Portfolio",
+  title: "Tawan - Portfolio",
+  description: "Tawan Chankachang - Full-Stack Developer Portfolio",
 };
 
 export default async function RootLayout({ children }) {

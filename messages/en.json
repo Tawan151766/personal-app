@@ -15,7 +15,7 @@
   "home": {
     "title": "Portfolio",
     "profile": {
-      "name": "Ethan Carter",
+      "name": "Tawan Chankachang",
       "title": "Full-Stack Developer",
       "experience": "2 years of experience",
       "description": "I specialize in creating dynamic web applications using modern technologies. My expertise includes front-end development with React, back-end development with Node.js, and database management with PostgreSQL. I am passionate about building scalable and user-friendly solutions.",
@@ -94,6 +94,55 @@
       "linkedin": "LinkedIn",
       "github": "GitHub",
       "twitter": "Twitter"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "categories": {
+      "webDevelopment": "Web Development",
+      "mobileDevelopment": "Mobile Development",
+      "dataScience": "Data Science"
+    },
+    "ecommercePlatform": {
+      "title": "E-commerce Platform",
+      "description": "Developed a full-fledged e-commerce platform with user authentication, product catalog, shopping cart, and payment gateway integration.",
+      "detailTitle": "E-commerce Platform for Artisanal Goods",
+      "detailDescription": "This project involved developing a comprehensive e-commerce platform for a local artisan collective, enabling them to showcase and sell their handcrafted goods online. The platform supports product listings, user accounts, shopping cart functionality, and secure payment processing.",
+      "role": "As the lead full-stack developer, I was responsible for the entire development lifecycle, from initial concept and design to deployment and ongoing maintenance. My contributions included designing the database schema, implementing the backend API, developing the frontend user interface, and integrating payment gateways."
+    },
+    "socialMediaDashboard": {
+      "title": "Social Media Dashboard",
+      "description": "Created a social media dashboard to manage multiple accounts, schedule posts, and analyze engagement metrics.",
+      "detailTitle": "Social Media Management Dashboard",
+      "detailDescription": "Developed a comprehensive social media management platform that allows businesses to manage multiple social accounts, schedule posts, track engagement metrics, and analyze performance across different platforms including Facebook, Twitter, Instagram, and LinkedIn.",
+      "role": "I served as the frontend architect and lead developer for this project. My responsibilities included designing the user interface, implementing real-time data visualization components, integrating with multiple social media APIs, and creating a responsive dashboard that works seamlessly across devices."
+    },
+    "personalBlog": {
+      "title": "Personal Blog",
+      "description": "Designed and developed a personal blog with a custom CMS, enabling easy content creation and management.",
+      "detailTitle": "Personal Blog with Custom CMS",
+      "detailDescription": "Created a modern personal blog platform with a custom content management system. The blog features a clean, responsive design, markdown support, comment system, and SEO optimization. Users can easily create, edit, and publish blog posts with rich media content.",
+      "role": "I was the sole developer on this project, handling both design and development. I built the custom CMS from scratch, implemented the frontend blog interface, created an admin dashboard for content management, and optimized the site for search engines and performance."
+    },
+    "mobileApp": {
+      "title": "Fitness Tracking App",
+      "description": "Built a cross-platform mobile app for fitness tracking with workout plans, progress monitoring, and social features.",
+      "detailTitle": "Fitness Tracking Mobile Application",
+      "detailDescription": "Developed a comprehensive fitness tracking mobile application using React Native. The app includes workout planning, progress tracking, nutrition logging, social features, and integration with wearable devices. Users can set goals, track their fitness journey, and connect with friends for motivation.",
+      "role": "I led the mobile development team and was responsible for the app architecture, UI/UX implementation, integration with fitness APIs, and performance optimization. I also handled the app store deployment process for both iOS and Android platforms."
+    },
+    "dataVisualization": {
+      "title": "Data Visualization Dashboard",
+      "description": "Created an interactive dashboard for visualizing complex datasets with real-time updates and custom filtering options.",
+      "detailTitle": "Interactive Data Visualization Dashboard",
+      "detailDescription": "Built a sophisticated data visualization dashboard for analyzing complex business datasets. The platform features interactive charts, real-time data updates, custom filtering options, and export capabilities. It helps businesses make data-driven decisions through clear visual representations of their key metrics.",
+      "role": "I was the lead frontend developer specializing in data visualization. I designed and implemented the dashboard architecture, created custom chart components, integrated with multiple data sources, and optimized performance for handling large datasets in real-time."
+    },
+    "buttonText": "View Project",
+    "sections": {
+      "myRole": "My Role",
+      "technologiesUsed": "Technologies Used",
+      "visualShowcase": "Visual Showcase"
     }
   }
 }

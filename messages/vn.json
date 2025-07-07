@@ -15,7 +15,7 @@
   "home": {
     "title": "Danh mục cá nhân",
     "profile": {
-      "name": "Ethan Carter",
+      "name": "Tawan Chankachang",
       "title": "Lập trình viên Full-Stack",
       "experience": "2 năm kinh nghiệm",
       "description": "Tôi chuyên phát triển các ứng dụng web động sử dụng công nghệ hiện đại. Thành thạo phát triển frontend với React, backend với Node.js và quản lý cơ sở dữ liệu bằng PostgreSQL. Tôi đam mê xây dựng các giải pháp có thể mở rộng và thân thiện với người dùng.",
@@ -94,6 +94,55 @@
       "linkedin": "LinkedIn",
       "github": "GitHub",
       "twitter": "Twitter"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "categories": {
+      "webDevelopment": "Phát triển web",
+      "mobileDevelopment": "Phát triển ứng dụng di động",
+      "dataScience": "Khoa học dữ liệu"
+    },
+    "ecommercePlatform": {
+      "title": "Nền tảng thương mại điện tử",
+      "description": "Phát triển nền tảng thương mại điện tử toàn diện với hệ thống xác thực người dùng, danh mục sản phẩm, giỏ hàng và tích hợp thanh toán.",
+      "detailTitle": "Nền tảng thương mại điện tử dành cho sản phẩm thủ công mỹ nghệ",
+      "detailDescription": "Dự án liên quan đến việc phát triển nền tảng thương mại điện tử toàn diện cho nhóm các nghệ nhân địa phương, cho phép họ trưng bày và bán sản phẩm thủ công mỹ nghệ trực tuyến. Nền tảng hỗ trợ danh sách sản phẩm, tài khoản người dùng, chức năng giỏ hàng và xử lý thanh toán an toàn.",
+      "role": "Là nhà phát triển full-stack chính, tôi chịu trách nhiệm toàn bộ chu trình phát triển từ ý tưởng và thiết kế ban đầu đến triển khai và bảo trì liên tục. Công việc của tôi bao gồm thiết kế sơ đồ cơ sở dữ liệu, triển khai API backend, phát triển giao diện người dùng frontend và tích hợp cổng thanh toán."
+    },
+    "socialMediaDashboard": {
+      "title": "Bảng điều khiển mạng xã hội",
+      "description": "Tạo bảng điều khiển mạng xã hội để quản lý nhiều tài khoản, lên lịch bài đăng và phân tích số liệu tương tác.",
+      "detailTitle": "Bảng điều khiển quản lý mạng xã hội",
+      "detailDescription": "Phát triển nền tảng quản lý mạng xã hội toàn diện, giúp doanh nghiệp quản lý nhiều tài khoản mạng xã hội, lên lịch bài đăng, theo dõi số liệu tương tác và phân tích hiệu quả trên các nền tảng như Facebook, Twitter, Instagram và LinkedIn.",
+      "role": "Tôi là kiến trúc sư frontend và nhà phát triển chính cho dự án này. Trách nhiệm của tôi bao gồm thiết kế giao diện người dùng, triển khai các thành phần biểu diễn dữ liệu theo thời gian thực, tích hợp với nhiều API mạng xã hội và tạo bảng điều khiển đáp ứng hoạt động mượt mà trên mọi thiết bị."
+    },
+    "personalBlog": {
+      "title": "Blog cá nhân",
+      "description": "Thiết kế và phát triển blog cá nhân với CMS tùy chỉnh, giúp dễ dàng tạo và quản lý nội dung.",
+      "detailTitle": "Blog cá nhân với hệ thống quản lý nội dung tùy chỉnh",
+      "detailDescription": "Xây dựng nền tảng blog cá nhân hiện đại với CMS tùy chỉnh. Blog có thiết kế sạch sẽ, đáp ứng, hỗ trợ markdown, hệ thống bình luận và tối ưu SEO. Người dùng có thể tạo, chỉnh sửa và xuất bản bài viết cùng nội dung đa phương tiện một cách dễ dàng.",
+      "role": "Tôi là nhà phát triển duy nhất trong dự án này, đảm nhiệm từ thiết kế đến phát triển. Tôi xây dựng CMS tùy chỉnh từ đầu, tạo giao diện frontend của blog, phát triển bảng điều khiển quản trị để quản lý nội dung và tối ưu trang cho công cụ tìm kiếm cũng như hiệu năng."
+    },
+    "mobileApp": {
+      "title": "Ứng dụng theo dõi tập luyện",
+      "description": "Tạo ứng dụng di động đa nền tảng để theo dõi tập luyện với kế hoạch tập luyện, giám sát tiến trình và các tính năng xã hội.",
+      "detailTitle": "Ứng dụng di động theo dõi tập luyện",
+      "detailDescription": "Phát triển ứng dụng di động theo dõi tập luyện toàn diện bằng React Native. Ứng dụng bao gồm lập kế hoạch tập luyện, theo dõi tiến trình, ghi chép dinh dưỡng, tính năng xã hội và tích hợp với thiết bị đeo thông minh. Người dùng có thể đặt mục tiêu, theo dõi hành trình tập luyện và kết nối với bạn bè để tăng động lực.",
+      "role": "Tôi là trưởng nhóm phát triển di động, chịu trách nhiệm kiến trúc ứng dụng, triển khai UI/UX, tích hợp API tập luyện và tối ưu hóa hiệu năng. Tôi cũng quản lý quy trình triển khai ứng dụng lên App Store cho cả iOS và Android."
+    },
+    "dataVisualization": {
+      "title": "Bảng điều khiển trực quan hóa dữ liệu",
+      "description": "Tạo bảng điều khiển tương tác để trực quan hóa bộ dữ liệu phức tạp với cập nhật thời gian thực và tùy chọn lọc nâng cao.",
+      "detailTitle": "Bảng điều khiển trực quan hóa dữ liệu tương tác",
+      "detailDescription": "Xây dựng bảng điều khiển trực quan hóa dữ liệu phức tạp cho việc phân tích các bộ dữ liệu kinh doanh phức tạp. Nền tảng có biểu đồ tương tác, cập nhật dữ liệu thời gian thực, tùy chọn lọc tùy chỉnh và khả năng xuất dữ liệu, giúp doanh nghiệp đưa ra quyết định dựa trên dữ liệu thông qua hình ảnh hóa rõ ràng các chỉ số quan trọng.",
+      "role": "Tôi là nhà phát triển frontend chính chuyên về trực quan hóa dữ liệu. Tôi thiết kế và triển khai kiến trúc bảng điều khiển, xây dựng các thành phần biểu đồ tùy chỉnh, tích hợp với nhiều nguồn dữ liệu và tối ưu hóa để xử lý bộ dữ liệu lớn theo thời gian thực."
+    },
+    "buttonText": "Xem dự án",
+    "sections": {
+      "myRole": "Vai trò của tôi",
+      "technologiesUsed": "Công nghệ sử dụng",
+      "visualShowcase": "Trình diễn dự án"
     }
   }
 }
