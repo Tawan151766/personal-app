@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { useTranslations } from "next-intl";
 
 // Constants for validation
 const VALIDATION_RULES = {
@@ -28,6 +29,9 @@ const RATE_LIMIT_WINDOW = 60000; // 1 minute
 const MAX_SUBMISSIONS_PER_WINDOW = 3;
 
 export default function ContactForm({ onSubmit, className = "" }) {
+  const t = useTranslations('contact.form');
+  const tContact = useTranslations('contact');
+  const tValidation = useTranslations('contact.form.validation');
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -92,29 +96,25 @@ export default function ContactForm({ onSubmit, className = "" }) {
     const sanitizedValue = sanitizeInput(value);
 
     if (rules.required && !sanitizedValue) {
-      return `${name.charAt(0).toUpperCase() + name.slice(1)} is required`;
+      return tValidation(`${name}Required`);
     }
 
     if (sanitizedValue.length < rules.min) {
-      return `${
-        name.charAt(0).toUpperCase() + name.slice(1)
-      } must be at least ${rules.min} characters`;
+      return tValidation(`${name}MinLength`);
     }
 
     if (sanitizedValue.length > rules.max) {
-      return `${
-        name.charAt(0).toUpperCase() + name.slice(1)
-      } must be no more than ${rules.max} characters`;
+      return tValidation(`${name}MaxLength`);
     }
 
     if (rules.pattern && !rules.pattern.test(sanitizedValue)) {
       if (name === "email") {
-        return "Please enter a valid email address";
+        return tValidation('emailInvalid');
       }
       if (name === "name") {
-        return "Name can only contain letters, spaces, hyphens, apostrophes, and periods";
+        return tValidation('namePattern');
       }
-      return `Please enter a valid ${name}`;
+      return tValidation(`${name}Invalid`);
     }
 
     return "";
@@ -336,9 +336,9 @@ export default function ContactForm({ onSubmit, className = "" }) {
             : "text-[#49739c]"
         }`}
       >
-        {current}/{max} characters
-        {isNearLimit && !isOverLimit && " (approaching limit)"}
-        {isOverLimit && " (over limit)"}
+        {current}/{max} {t('characterCount')}
+        {isNearLimit && !isOverLimit && ` (${t('approachingLimit')})`}
+        {isOverLimit && ` (${t('overLimit')})`}
       </span>
     );
   };
@@ -347,12 +347,10 @@ export default function ContactForm({ onSubmit, className = "" }) {
     <div className={className}>
       <div className="relative">
         <h3 className="text-[#0d141c] tracking-light text-2xl lg:text-3xl font-bold leading-tight px-4 lg:px-6 text-left pb-2 pt-5 lg:pt-8">
-          Get in touch
+          {tContact('getInTouch')}
         </h3>
         <p className="text-[#0d141c] text-base lg:text-lg font-normal leading-normal pb-3 pt-1 px-4 lg:px-6 max-w-2xl">
-          I'm currently seeking new opportunities and would love to hear from
-          you. Whether you have a project in mind or just want to connect, feel
-          free to reach out.
+          {tContact('description')}
         </p>
 
         {/* Draft indicator */}
@@ -370,7 +368,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
                   clipRule="evenodd"
                 />
               </svg>
-              Draft automatically saved
+              {t('draft')}
             </div>
           </div>
         )}
@@ -392,10 +390,10 @@ export default function ContactForm({ onSubmit, className = "" }) {
               </svg>
               <div>
                 <p className="text-green-800 font-medium">
-                  Message sent successfully!
+                  {t('success.title')}
                 </p>
                 <p className="text-green-700 text-sm mt-1">
-                  I'll get back to you as soon as possible.
+                  {t('success.description')}
                 </p>
               </div>
             </div>
@@ -419,7 +417,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
               </svg>
               <div>
                 <p className="text-red-800 font-medium">
-                  Unable to send message
+                  {t('error.title')}
                 </p>
                 <p className="text-red-700 text-sm mt-1">{submitError}</p>
               </div>
@@ -439,7 +437,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
         <div className="flex max-w-[480px] lg:max-w-2xl flex-wrap items-end gap-4 px-4 lg:px-6 py-3">
           <label className="flex flex-col min-w-40 flex-1 group">
             <span className="text-sm lg:text-base font-medium text-[#0d141c] mb-2 flex items-center">
-              Name <span className="text-red-500 ml-1">*</span>
+              {t('name')} <span className="text-red-500 ml-1">*</span>
               {formData.name && !errors.name && (
                 <svg
                   className="w-4 h-4 text-green-600 ml-2"
@@ -461,7 +459,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
               onChange={handleInputChange}
               onFocus={() => handleFocus("name")}
               onBlur={() => handleBlur("name")}
-              placeholder="Your Full Name"
+              placeholder={t('namePlaceholder')}
               className={getInputClassName("name")}
               disabled={isLoading || isSuccess}
               aria-invalid={errors.name ? "true" : "false"}
@@ -491,7 +489,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
                 </span>
               ) : (
                 <span id="name-help" className="text-xs text-[#49739c]">
-                  Enter your full name as you'd like to be addressed
+                  {t('nameHelp')}
                 </span>
               )}
               {getCharacterCount("name")}
@@ -503,7 +501,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
         <div className="flex max-w-[480px] lg:max-w-2xl flex-wrap items-end gap-4 px-4 lg:px-6 py-3">
           <label className="flex flex-col min-w-40 flex-1 group">
             <span className="text-sm lg:text-base font-medium text-[#0d141c] mb-2 flex items-center">
-              Email <span className="text-red-500 ml-1">*</span>
+              {t('email')} <span className="text-red-500 ml-1">*</span>
               {formData.email && !errors.email && (
                 <svg
                   className="w-4 h-4 text-green-600 ml-2"
@@ -525,7 +523,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
               onChange={handleInputChange}
               onFocus={() => handleFocus("email")}
               onBlur={() => handleBlur("email")}
-              placeholder="your.email@example.com"
+              placeholder={t('emailPlaceholder')}
               className={getInputClassName("email")}
               disabled={isLoading || isSuccess}
               aria-invalid={errors.email ? "true" : "false"}
@@ -555,7 +553,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
                 </span>
               ) : (
                 <span id="email-help" className="text-xs text-[#49739c]">
-                  I'll use this to respond to your message
+                  {t('emailHelp')}
                 </span>
               )}
               {getCharacterCount("email")}
@@ -567,7 +565,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
         <div className="flex max-w-[480px] lg:max-w-2xl flex-wrap items-end gap-4 px-4 lg:px-6 py-3">
           <label className="flex flex-col min-w-40 flex-1 group">
             <span className="text-sm lg:text-base font-medium text-[#0d141c] mb-2 flex items-center">
-              Message <span className="text-red-500 ml-1">*</span>
+              {t('message')} <span className="text-red-500 ml-1">*</span>
               {formData.message && !errors.message && (
                 <svg
                   className="w-4 h-4 text-green-600 ml-2"
@@ -588,7 +586,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
               onChange={handleInputChange}
               onFocus={() => handleFocus("message")}
               onBlur={() => handleBlur("message")}
-              placeholder="Tell me about your project, ideas, or just say hello! I'd love to hear from you."
+              placeholder={t('messagePlaceholder')}
               className={getTextareaClassName()}
               disabled={isLoading || isSuccess}
               aria-invalid={errors.message ? "true" : "false"}
@@ -620,7 +618,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
                 </span>
               ) : (
                 <span id="message-help" className="text-xs text-[#49739c]">
-                  Share your thoughts, project details, or collaboration ideas
+                  {t('messageHelp')}
                 </span>
               )}
               {getCharacterCount("message")}
@@ -677,7 +675,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
                       d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                     ></path>
                   </svg>
-                  <span className="truncate">Sending Message...</span>
+                  <span className="truncate">{t('sending')}</span>
                 </>
               ) : isSuccess ? (
                 <>
@@ -692,7 +690,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="truncate">Message Sent!</span>
+                  <span className="truncate">{t('sent')}</span>
                 </>
               ) : (
                 <>
@@ -709,7 +707,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
                       d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
                     />
                   </svg>
-                  <span className="truncate">Send Message</span>
+                  <span className="truncate">{t('sendMessage')}</span>
                 </>
               )}
             </button>

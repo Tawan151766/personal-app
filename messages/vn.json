@@ -1,0 +1,99 @@
+{
+  "common": {
+    "home": "Trang chủ",
+    "about": "Về tôi",
+    "portfolio": "Danh mục",
+    "contact": "Liên hệ",
+    "language": "Ngôn ngữ"
+  },
+  "navigation": {
+    "home": "Trang chủ",
+    "about": "Về tôi",
+    "portfolio": "Danh mục",
+    "contact": "Liên hệ"
+  },
+  "home": {
+    "title": "Danh mục cá nhân",
+    "profile": {
+      "name": "Ethan Carter",
+      "title": "Lập trình viên Full-Stack",
+      "experience": "2 năm kinh nghiệm",
+      "description": "Tôi chuyên phát triển các ứng dụng web động sử dụng công nghệ hiện đại. Thành thạo phát triển frontend với React, backend với Node.js và quản lý cơ sở dữ liệu bằng PostgreSQL. Tôi đam mê xây dựng các giải pháp có thể mở rộng và thân thiện với người dùng.",
+      "viewWork": "Xem công việc của tôi"
+    }
+  },
+  "about": {
+    "title": "Về tôi",
+    "skills": "Kỹ năng",
+    "experience": "Kinh nghiệm",
+    "education": "Học vấn",
+    "share": "Chia sẻ"
+  },
+  "portfolio": {
+    "title": "Danh mục",
+    "projects": "Dự án",
+    "viewProject": "Xem dự án",
+    "projectDetails": "Chi tiết dự án",
+    "technologies": "Công nghệ",
+    "category": {
+      "webDevelopment": "Phát triển Web",
+      "mobileApp": "Ứng dụng di động",
+      "uiDesign": "Thiết kế UI/UX"
+    }
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "getInTouch": "Liên hệ với tôi bất cứ lúc nào",
+    "description": "Tôi hiện đang tìm kiếm cơ hội mới và rất mong nhận được liên hệ từ bạn. Dù là một ý tưởng dự án hay đơn giản chỉ là muốn kết nối, hãy thoải mái liên hệ.",
+    "form": {
+      "name": "Họ và tên",
+      "email": "Email",
+      "message": "Tin nhắn",
+      "namePlaceholder": "Họ và tên của bạn",
+      "emailPlaceholder": "your.email@example.com",
+      "messagePlaceholder": "Chia sẻ về dự án, ý tưởng hoặc đơn giản là chào hỏi!",
+      "nameHelp": "Hãy nhập tên bạn muốn được gọi",
+      "emailHelp": "Chúng tôi sẽ dùng email này để phản hồi bạn",
+      "messageHelp": "Hãy chia sẻ ý tưởng, chi tiết dự án hoặc đề xuất hợp tác",
+      "required": "Bắt buộc",
+      "sendMessage": "Gửi tin nhắn",
+      "sending": "Đang gửi tin nhắn...",
+      "sent": "Đã gửi thành công!",
+      "success": {
+        "title": "Tin nhắn đã được gửi!",
+        "description": "Tôi sẽ phản hồi bạn sớm nhất có thể."
+      },
+      "error": {
+        "title": "Không thể gửi tin nhắn",
+        "network": "Đã xảy ra lỗi mạng. Vui lòng kiểm tra kết nối và thử lại.",
+        "validation": "Vui lòng kiểm tra thông tin và thử lại.",
+        "rateLimit": "Bạn đã gửi quá nhiều lần. Vui lòng chờ một lúc.",
+        "cooldown": "Vui lòng đợi và thử lại sau."
+      },
+      "validation": {
+        "nameRequired": "Họ và tên là bắt buộc",
+        "nameMinLength": "Tên phải có ít nhất 2 ký tự",
+        "nameMaxLength": "Tên không được vượt quá 50 ký tự",
+        "namePattern": "Tên chỉ được chứa chữ cái, khoảng trắng, dấu gạch nối, dấu nháy đơn và dấu chấm",
+        "emailRequired": "Email là bắt buộc",
+        "emailInvalid": "Vui lòng nhập đúng định dạng email",
+        "emailMaxLength": "Email không được vượt quá 100 ký tự",
+        "messageRequired": "Tin nhắn là bắt buộc",
+        "messageMinLength": "Tin nhắn phải có ít nhất 10 ký tự",
+        "messageMaxLength": "Tin nhắn không được vượt quá 1000 ký tự"
+      },
+      "draft": "Bản nháp đã được lưu tự động",
+      "keyboardShortcut": "Ctrl + Enter để gửi nhanh",
+      "allFieldsRequired": "Tất cả các trường đều bắt buộc",
+      "characterCount": "ký tự",
+      "approachingLimit": "Gần đạt giới hạn",
+      "overLimit": "Vượt quá giới hạn"
+    },
+    "social": {
+      "title": "Kết nối với tôi",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "twitter": "Twitter"
+    }
+  }
+}

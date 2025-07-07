@@ -1,0 +1,99 @@
+{
+  "common": {
+    "home": "Home",
+    "about": "About Me",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About Me",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Portfolio",
+    "profile": {
+      "name": "Ethan Carter",
+      "title": "Full-Stack Developer",
+      "experience": "2 years of experience",
+      "description": "I specialize in creating dynamic web applications using modern technologies. My expertise includes front-end development with React, back-end development with Node.js, and database management with PostgreSQL. I am passionate about building scalable and user-friendly solutions.",
+      "viewWork": "View My Work"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "share": "Share"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "projects": "Projects",
+    "viewProject": "View Project",
+    "projectDetails": "Project Details",
+    "technologies": "Technologies",
+    "category": {
+      "webDevelopment": "Web Development",
+      "mobileApp": "Mobile App",
+      "uiDesign": "UI/UX Design"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "getInTouch": "Get in touch",
+    "description": "I'm currently seeking new opportunities and would love to hear from you. Whether you have a project in mind or just want to connect, feel free to reach out.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "namePlaceholder": "Your Full Name",
+      "emailPlaceholder": "your.email@example.com",
+      "messagePlaceholder": "Tell me about your project, ideas, or just say hello! I'd love to hear from you.",
+      "nameHelp": "Enter your full name as you'd like to be addressed",
+      "emailHelp": "I'll use this to respond to your message",
+      "messageHelp": "Share your thoughts, project details, or collaboration ideas",
+      "required": "required",
+      "sendMessage": "Send Message",
+      "sending": "Sending Message...",
+      "sent": "Message Sent!",
+      "success": {
+        "title": "Message sent successfully!",
+        "description": "I'll get back to you as soon as possible."
+      },
+      "error": {
+        "title": "Unable to send message",
+        "network": "Network error occurred. Please check your connection and try again.",
+        "validation": "Please check your input and try again.",
+        "rateLimit": "Too many submissions. Please wait a minute before trying again.",
+        "cooldown": "Please wait a moment before submitting again."
+      },
+      "validation": {
+        "nameRequired": "Name is required",
+        "nameMinLength": "Name must be at least 2 characters",
+        "nameMaxLength": "Name must be no more than 50 characters",
+        "namePattern": "Name can only contain letters, spaces, hyphens, apostrophes, and periods",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email address",
+        "emailMaxLength": "Email must be no more than 100 characters",
+        "messageRequired": "Message is required",
+        "messageMinLength": "Message must be at least 10 characters",
+        "messageMaxLength": "Message must be no more than 1000 characters"
+      },
+      "draft": "Draft automatically saved",
+      "keyboardShortcut": "Press Ctrl + Enter to send quickly",
+      "allFieldsRequired": "All fields are required",
+      "characterCount": "characters",
+      "approachingLimit": "approaching limit",
+      "overLimit": "over limit"
+    },
+    "social": {
+      "title": "Connect with me",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "twitter": "Twitter"
+    }
+  }
+}

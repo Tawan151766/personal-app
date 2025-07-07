@@ -1,6 +1,6 @@
 import { PageHeader, UnifiedNavigation } from "./index";
 
-export default function ContactLayout({ children, onBackClick }) {
+export default function ContactLayout({ children }) {
   return (
     <div
       className="relative flex size-full min-h-screen flex-col bg-slate-50 justify-between group/design-root overflow-x-hidden max-w-[430px] mx-auto md:max-w-none md:flex-row"
@@ -11,7 +11,6 @@ export default function ContactLayout({ children, onBackClick }) {
         <div className="md:p-6">
           <PageHeader 
             title="Contact"
-            showBackButton={false}
           />
         </div>
         <div className="md:flex-1 md:px-6">
@@ -25,8 +24,6 @@ export default function ContactLayout({ children, onBackClick }) {
         <div className="md:hidden">
           <PageHeader 
             title="Contact"
-            showBackButton={true}
-            onBackClick={onBackClick}
           />
         </div>
         

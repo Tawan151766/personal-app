@@ -1,43 +1,44 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { Icon } from "./index";
 
-const NAVIGATION_ITEMS = [
-  {
-    id: "home",
-    href: "/",
-    icon: "house",
-    label: "Home",
-    exact: true
-  },
-  {
-    id: "about",
-    href: "/about-me",
-    icon: "user",
-    label: "About Me"
-  },
-  {
-    id: "portfolio",
-    href: "/product",
-    icon: "briefcase",
-    label: "Portfolio"
-  },
-  {
-    id: "contact",
-    href: "/contact",
-    icon: "envelope",
-    label: "Contact"
-  }
-];
-
 export default function UnifiedNavigation({ 
-  items = NAVIGATION_ITEMS,
   activeColor = "text-[#0d141c]",
   inactiveColor = "text-[#49739c]",
   className = ""
 }) {
   const pathname = usePathname();
+  const t = useTranslations('navigation');
+
+  const NAVIGATION_ITEMS = [
+    {
+      id: "home",
+      href: "/",
+      icon: "house",
+      label: t('home'),
+      exact: true
+    },
+    {
+      id: "about",
+      href: "/about-me",
+      icon: "user",
+      label: t('about')
+    },
+    {
+      id: "portfolio",
+      href: "/product",
+      icon: "briefcase",
+      label: t('portfolio')
+    },
+    {
+      id: "contact",
+      href: "/contact",
+      icon: "envelope",
+      label: t('contact')
+    }
+  ];
 
   const isActive = (item) => {
     if (item.exact) {
@@ -48,7 +49,7 @@ export default function UnifiedNavigation({
 
   return (
     <div className={`flex gap-2 border-t border-[#e7edf4] bg-slate-50 px-4 pb-3 pt-2 md:flex-col md:gap-4 md:border-none md:bg-transparent md:p-0 ${className}`}>
-      {items.map((item) => {
+      {NAVIGATION_ITEMS.map((item) => {
         const active = isActive(item);
         const colorClass = active ? activeColor : inactiveColor;
         

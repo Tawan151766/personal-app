@@ -1,9 +1,14 @@
 "use client";
 
-export default function SocialLinks({ links = [], title = "Connect with me" }) {
+import { useTranslations } from "next-intl";
+
+export default function SocialLinks({ links = [], title }) {
+  const t = useTranslations('contact.social');
+  const displayTitle = title || t('title');
+  
   const defaultLinks = [
-    { name: "LinkedIn", href: "https://linkedin.com", color: "bg-[#e7edf4] text-[#0d141c]" },
-    { name: "GitHub", href: "https://github.com", color: "bg-[#e7edf4] text-[#0d141c]" }
+    { name: t('linkedin'), href: "https://linkedin.com", color: "bg-[#e7edf4] text-[#0d141c]" },
+    { name: t('github'), href: "https://github.com", color: "bg-[#e7edf4] text-[#0d141c]" }
   ];
 
   const socialLinks = links.length > 0 ? links : defaultLinks;
@@ -17,7 +22,7 @@ export default function SocialLinks({ links = [], title = "Connect with me" }) {
   return (
     <div>
       <h3 className="text-[#0d141c] text-lg lg:text-xl font-bold leading-tight tracking-[-0.015em] px-4 lg:px-6 pb-2 pt-4 lg:pt-6">
-        {title}
+        {displayTitle}
       </h3>
       <div className="flex justify-center lg:justify-start">
         <div className="flex flex-1 gap-3 lg:gap-4 flex-wrap px-4 lg:px-6 py-3 max-w-[480px] lg:max-w-2xl justify-center lg:justify-start">

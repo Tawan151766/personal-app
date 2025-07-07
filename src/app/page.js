@@ -3,8 +3,7 @@ import { Layout, ProfileCard } from "../components";
 
 export default function Home() {
   const handleViewWork = () => {
-    // Add navigation logic here
-    console.log("View My Work clicked");
+    window.location.href = "/product";
   };
 
   return (
