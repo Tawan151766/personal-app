@@ -16,9 +16,9 @@
     "title": "Danh mục cá nhân",
     "profile": {
       "name": "Tawan Chankachang",
-      "title": "Lập trình viên Full-Stack",
+      "title": "Full-Stack Developer",
       "experience": "2 năm kinh nghiệm",
-      "description": "Tôi chuyên phát triển các ứng dụng web động sử dụng công nghệ hiện đại. Thành thạo phát triển frontend với React, backend với Node.js và quản lý cơ sở dữ liệu bằng PostgreSQL. Tôi đam mê xây dựng các giải pháp có thể mở rộng và thân thiện với người dùng.",
+      "description": "Xin chào, tôi tên là Tawan Chankachang, lập trình viên Full Stack với hơn 2 năm kinh nghiệm. Tôi bắt đầu làm việc khi còn học đại học và thích học công nghệ mới. Hiện tôi đang tìm việc phù hợp với kỹ năng và sở thích của mình.",
       "viewWork": "Xem công việc của tôi"
     }
   },
@@ -143,6 +143,28 @@
       "myRole": "Vai trò của tôi",
       "technologiesUsed": "Công nghệ sử dụng",
       "visualShowcase": "Trình diễn dự án"
+    }
+  },
+  "about-me": {
+    "title": "Giới thiệu",
+    "description": "Tôi là một lập trình viên Full-Stack tận tâm với hai năm kinh nghiệm xây dựng các ứng dụng web động. Tôi có chuyên môn về cả công nghệ front-end và back-end, giúp tôi cung cấp các giải pháp toàn diện phù hợp với nhiều nhu cầu dự án khác nhau. Tôi đam mê tạo ra các ứng dụng hiệu quả và thân thiện với người dùng.",
+    "Education": {
+      "title": "Học vấn",
+      "degree": "Cử nhân Khoa học Máy tính",
+      "university": "Đại học Chao Phraya"
+    },
+    "Experience": {
+      "title": "Kinh nghiệm",
+      "years": "2 năm",
+      "waylar": "Công ty Waylar",
+      "waylarPosition": "Lập trình viên Full-Stack (2023 - Nay)",
+      "waylarDescription": "Chịu trách nhiệm phát triển và duy trì trang web chính của công ty và Hệ thống Quản lý Vận tải Nội bộ. Làm việc chặt chẽ với các nhóm liên chức năng để thu thập yêu cầu và triển khai giải pháp.",
+      "UTE": "UTE (Trường Đại học Sư phạm Kỹ thuật Đà Nẵng)",
+      "UTEPosition": "Thực tập sinh (2022)",
+      "UTEDescription": "Participated in a full-time internship focusing on software development. Gained cross-cultural working experience and improved communication skills in an international environment.",
+      "plantEquipment": "Công ty TNHH Plant Equipment",
+      "plantEquipmentPosition": "Thực tập sinh (2022)",
+      "plantEquipmentDescription": "Hỗ trợ phát triển hệ thống quản lý nội bộ nhằm tối ưu hóa hoạt động. Phát triển các công cụ web để quản lý dữ liệu nhân viên, báo cáo và phân bổ tài nguyên. Làm việc chặt chẽ với nhân viên công ty để thu thập yêu cầu và triển khai giải pháp."
     }
   }
 }

@@ -103,12 +103,12 @@
       "mobileDevelopment": "Mobile Development",
       "dataScience": "Data Science"
     },
-    "organizationTodoSystem": {
-      "title": "Organizational ToDo Management System",
-      "description": "Developed a task management system for organizations, enabling efficient task creation, assignment, and status tracking.",
-      "detailTitle": "ToDo List System for Internal Organizational Tasks",
-      "detailDescription": "This system enables administrators to create and assign tasks to employees, monitor progress via a dashboard, and allows users to view a personal summary of their tasks and mark them as completed.",
-      "role": "As a full-stack developer, I was responsible for developing the dashboard UI, user management, task management features, and the complete database system."
+    "ecommercePlatform": {
+      "title": "E-commerce Platform",
+      "description": "Developed a full-fledged e-commerce platform with user authentication, product catalog, shopping cart, and payment gateway integration.",
+      "detailTitle": "E-commerce Platform for Artisanal Goods",
+      "detailDescription": "This project involved developing a comprehensive e-commerce platform for a local artisan collective, enabling them to showcase and sell their handcrafted goods online. The platform supports product listings, user accounts, shopping cart functionality, and secure payment processing.",
+      "role": "As the lead full-stack developer, I was responsible for the entire development lifecycle, from initial concept and design to deployment and ongoing maintenance. My contributions included designing the database schema, implementing the backend API, developing the frontend user interface, and integrating payment gateways."
     },
     "socialMediaDashboard": {
       "title": "Social Media Dashboard",
@@ -143,6 +143,28 @@
       "myRole": "My Role",
       "technologiesUsed": "Technologies Used",
       "visualShowcase": "Visual Showcase"
+    }
+  },
+  "about-me": {
+    "title": "About Me",
+    "description": "I’m a dedicated Full-Stack Developer with two years of experience crafting dynamic web applications. My expertise covers both front-end and back-end technologies, enabling me to deliver comprehensive solutions tailored to diverse project needs. I’m passionate about creating efficient and user-friendly applications.",
+    "Education": {
+      "title": "Education",
+      "degree": "Bachelor’s Degree in Computer Science",
+      "university": "Chao Phraya University"
+    },
+    "Experience": {
+      "title": "Experience",
+      "years": "2 years",
+      "waylar": "Waylar Corporation",
+      "waylarPosition": "Full-Stack Developer (2023 - Present)",
+      "waylarDescription": "Responsible for the development and maintenance of the company’s main website and internal Logistics Transport Management System. Worked closely with cross-functional teams to gather requirements and deliver",
+      "UTE": "UTE (University of Technology and Education at Da Nang)",
+      "UTEPosition": "Intern (2022)",
+      "UTEDescription": "Participated in a full-time internship focusing on software development.Gained cross-cultural working experience and improved communication skills in an international environment.",
+      "plantEquipment": "Plant Equipment Co., Ltd.",
+      "plantEquipmentPosition": "Intern (2022)",
+      "plantEquipmentDescription": "Assisted in developing an internal management system to streamline operations. Development web-based tools for employee data, reporting, and resource allocation. Worked closely with company staff to gather requirements and implement solutions."
     }
   }
 }

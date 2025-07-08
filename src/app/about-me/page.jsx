@@ -1,19 +1,30 @@
 "use client";
 
-import { 
-  AboutLayout, 
-  ProfileCard, 
-  Section, 
-  SkillsList, 
-  InfoCard 
+import { useTranslations } from "next-intl";
+import {
+  AboutLayout,
+  ProfileCard,
+  Section,
+  SkillsList,
+  InfoCard,
 } from "../../components";
 
 function AboutPage() {
   const skills = [
-    "React", "Next.js", "TypeScript", "Ant Design", "Tailwind CSS",
-    "Express.js", "Node.js", "PHP", "NestJS", "MySQL", "PostgreSQL", "MongoDB"
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Ant Design",
+    "Tailwind CSS",
+    "Express.js",
+    "Node.js",
+    "PHP",
+    "NestJS",
+    "MySQL",
+    "PostgreSQL",
+    "MongoDB",
   ];
-
+  const t = useTranslations("about-me");
   const handleBackClick = () => {
     // Navigate back logic
     window.history.back();
@@ -26,7 +37,7 @@ function AboutPage() {
 
   return (
     <AboutLayout onBackClick={handleBackClick} onShareClick={handleShareClick}>
-      <ProfileCard 
+      <ProfileCard
         profileImage="https://lh3.googleusercontent.com/aida-public/AB6AXuDLXBcQ91w2vZJiPAyIU_x8rnptFE9c8_fS5hBzn-UL2Dze85S5VInwv9wy3pTbtbgeiQ_7ohWN9yimtIBm12mTZALoyl2ecIKC1inHbviEuivo_RjCbinF7dssjr3G0A0DIJ7620l6N9G2E_A_w5_fcoPh5sAv0IWwc8La-XdX-AGpqomGnEOTKvLXh2vNr9A5Ql-N8qjSUHH-fNlUzTU3vSemsHZaVJKRuXH-SeohnpKX5OHC6anjEI9Z-igAaPlwN86o0pjnLGal"
         name="Ethan Carter"
         title="Full-Stack Developer"
@@ -35,29 +46,38 @@ function AboutPage() {
         buttonText=""
         showButton={false}
       />
-      
-      <Section title="About Me">
+
+      <Section title={t("title")}>
         <p className="text-[#0d141c] text-base font-normal leading-normal pb-3 pt-1 px-4">
-          I'm a dedicated full-stack developer with two years of experience in
-          crafting dynamic web applications. My expertise spans both front-end
-          and back-end technologies, allowing me to deliver comprehensive
-          solutions tailored to meet diverse project needs. I'm passionate about
-          creating efficient, scalable, and user-friendly applications.
+          {t("description")}
         </p>
       </Section>
 
-      <Section title="Education">
-        <InfoCard 
-          title="Chaopraya University"
-          subtitle="Faculty of Science and Technology, Computer Science"
+      <Section title={t("Education.title")}>
+        <InfoCard
+          title={t("Education.degree")}
+          subtitle={t("Education.university")}
         />
       </Section>
 
-      <Section title="Experience">
-        <InfoCard 
-          title="2 years"
-          subtitle="Full-Stack Developer"
-        />
+      <Section title={t("Experience.title")}>
+        <div className="space-y-4">
+          <InfoCard
+            title={t("Experience.waylar")}
+            subtitle={t("Experience.waylarPosition")}
+            description={t("Experience.waylarDescription")}
+          />
+          <InfoCard
+            title={t("Experience.UTE")}
+            subtitle={t("Experience.UTEPosition")}
+            description={t("Experience.UTEDescription")}
+          />
+          <InfoCard
+            title={t("Experience.plantEquipment")}
+            subtitle={t("Experience.plantEquipmentPosition")}
+            description={t("Experience.plantEquipmentDescription")}
+          />
+        </div>
       </Section>
 
       <Section title="Skills">
