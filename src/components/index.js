@@ -10,6 +10,7 @@ export { default as SkillTag } from './SkillTag';
 export { default as SkillIcon } from './SkillIcon';
 export { default as SkillsList } from './SkillsList';
 export { default as InfoCard } from './InfoCard';
+export { default as Timeline } from './Timeline';
 export { default as AboutNavigation } from './AboutNavigation';
 export { default as AboutLayout } from './AboutLayout';
 export { default as ProjectCard } from './ProjectCard';

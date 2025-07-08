@@ -18,16 +18,7 @@ export default function PageHeader({ title, showShareButton = false, onShareClic
       </div>
       <div className="flex items-center gap-2">
         <LanguageSwitcher />
-        {showShareButton && (
-          <button 
-            className="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-[#0d141c] gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0"
-            onClick={onShareClick}
-          >
-            <div className="text-[#0d141c]">
-              <Icon name="share" size="24px" />
-            </div>
-          </button>
-        )}
+      
       </div>
     </div>
   );

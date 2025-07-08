@@ -7,6 +7,7 @@ import {
   Section,
   SkillsList,
   InfoCard,
+  Timeline,
 } from "../../components";
 
 function AboutPage() {
@@ -61,26 +62,31 @@ function AboutPage() {
       </Section>
 
       <Section title={t("Experience.title")}>
-        <div className="space-y-4">
-          <InfoCard
-            title={t("Experience.waylar")}
-            subtitle={t("Experience.waylarPosition")}
-            description={t("Experience.waylarDescription")}
-          />
-          <InfoCard
-            title={t("Experience.UTE")}
-            subtitle={t("Experience.UTEPosition")}
-            description={t("Experience.UTEDescription")}
-          />
-          <InfoCard
-            title={t("Experience.plantEquipment")}
-            subtitle={t("Experience.plantEquipmentPosition")}
-            description={t("Experience.plantEquipmentDescription")}
-          />
-        </div>
+        <Timeline
+          items={[
+            {
+              title: t("Experience.waylar"),
+              subtitle: t("Experience.waylarPosition"),
+              description: t("Experience.waylarDescription"),
+              period: "2023 - Present",
+            },
+            {
+              title: t("Experience.UTE"),
+              subtitle: t("Experience.UTEPosition"),
+              description: t("Experience.UTEDescription"),
+              period: "2022",
+            },
+            {
+              title: t("Experience.plantEquipment"),
+              subtitle: t("Experience.plantEquipmentPosition"),
+              description: t("Experience.plantEquipmentDescription"),
+              period: "2022",
+            },
+          ]}
+        />
       </Section>
 
-      <Section title="Skills">
+      <Section title={"Skills"}>
         <SkillsList skills={skills} />
       </Section>
     </AboutLayout>
