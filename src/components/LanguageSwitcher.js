@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
 
 const LANGUAGES = [
-  { code: "en", name: "English", flag: "🇺🇸" },
-  { code: "th", name: "ไทย", flag: "🇹🇭" },
-  { code: "vn", name: "Tiếng Việt", flag: "🇻🇳" },
+  { code: "EN", name: "English", flag: "🇺🇸" },
+  { code: "TH", name: "ไทย", flag: "🇹🇭" },
+  { code: "VN", name: "Tiếng Việt", flag: "🇻🇳" },
 ];
 
 export default function LanguageSwitcher({ className = "" }) {
@@ -61,7 +61,7 @@ export default function LanguageSwitcher({ className = "" }) {
           />
 
           {/* Dropdown */}
-          <div className="absolute top-full left-0 mt-1 w-full min-w-[150px] bg-white border border-[#e7edf4] rounded-lg shadow-lg z-20 overflow-hidden">
+          <div className="absolute top-full right-0 mt-1 w-full min-w-[150px] bg-white border border-[#e7edf4] rounded-lg shadow-lg z-20 overflow-hidden">
             {LANGUAGES.map((language) => (
               <button
                 key={language.code}
