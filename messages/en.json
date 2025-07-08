@@ -103,12 +103,12 @@
       "mobileDevelopment": "Mobile Development",
       "dataScience": "Data Science"
     },
-    "ecommercePlatform": {
-      "title": "E-commerce Platform",
-      "description": "Developed a full-fledged e-commerce platform with user authentication, product catalog, shopping cart, and payment gateway integration.",
-      "detailTitle": "E-commerce Platform for Artisanal Goods",
-      "detailDescription": "This project involved developing a comprehensive e-commerce platform for a local artisan collective, enabling them to showcase and sell their handcrafted goods online. The platform supports product listings, user accounts, shopping cart functionality, and secure payment processing.",
-      "role": "As the lead full-stack developer, I was responsible for the entire development lifecycle, from initial concept and design to deployment and ongoing maintenance. My contributions included designing the database schema, implementing the backend API, developing the frontend user interface, and integrating payment gateways."
+    "organizationTodoSystem": {
+      "title": "Organizational ToDo Management System",
+      "description": "Developed a task management system for organizations, enabling efficient task creation, assignment, and status tracking.",
+      "detailTitle": "ToDo List System for Internal Organizational Tasks",
+      "detailDescription": "This system enables administrators to create and assign tasks to employees, monitor progress via a dashboard, and allows users to view a personal summary of their tasks and mark them as completed.",
+      "role": "As a full-stack developer, I was responsible for developing the dashboard UI, user management, task management features, and the complete database system."
     },
     "socialMediaDashboard": {
       "title": "Social Media Dashboard",

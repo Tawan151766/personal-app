@@ -103,12 +103,12 @@
       "mobileDevelopment": "Phát triển ứng dụng di động",
       "dataScience": "Khoa học dữ liệu"
     },
-    "ecommercePlatform": {
-      "title": "Nền tảng thương mại điện tử",
-      "description": "Phát triển nền tảng thương mại điện tử toàn diện với hệ thống xác thực người dùng, danh mục sản phẩm, giỏ hàng và tích hợp thanh toán.",
-      "detailTitle": "Nền tảng thương mại điện tử dành cho sản phẩm thủ công mỹ nghệ",
-      "detailDescription": "Dự án liên quan đến việc phát triển nền tảng thương mại điện tử toàn diện cho nhóm các nghệ nhân địa phương, cho phép họ trưng bày và bán sản phẩm thủ công mỹ nghệ trực tuyến. Nền tảng hỗ trợ danh sách sản phẩm, tài khoản người dùng, chức năng giỏ hàng và xử lý thanh toán an toàn.",
-      "role": "Là nhà phát triển full-stack chính, tôi chịu trách nhiệm toàn bộ chu trình phát triển từ ý tưởng và thiết kế ban đầu đến triển khai và bảo trì liên tục. Công việc của tôi bao gồm thiết kế sơ đồ cơ sở dữ liệu, triển khai API backend, phát triển giao diện người dùng frontend và tích hợp cổng thanh toán."
+    "organizationTodoSystem": {
+      "title": "Hệ thống quản lý công việc trong tổ chức",
+      "description": "Phát triển hệ thống quản lý công việc cho tổ chức, cho phép tạo, phân công và theo dõi tiến độ công việc một cách hiệu quả.",
+      "detailTitle": "Hệ thống ToDo List cho công việc nội bộ tổ chức",
+      "detailDescription": "Hệ thống này cho phép quản trị viên tạo và phân công công việc cho nhân viên, theo dõi tiến độ qua bảng điều khiển, đồng thời người dùng có thể xem tổng quan công việc cá nhân và đánh dấu hoàn thành công việc.",
+      "role": "Với vai trò là lập trình viên full-stack, tôi chịu trách nhiệm phát triển giao diện bảng điều khiển, quản lý người dùng, tính năng quản lý công việc và toàn bộ hệ thống cơ sở dữ liệu."
     },
     "socialMediaDashboard": {
       "title": "Bảng điều khiển mạng xã hội",
