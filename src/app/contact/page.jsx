@@ -59,6 +59,11 @@ export default function ContactPage() {
       href: "https://github.com/Tawan151766",
       color: "bg-[#333] text-white",
     },
+    {
+      name: "Line",
+      href: "https://line.me/R/ti/p/~0631316693t._.",
+      color: "bg-[#00c300] text-white",
+    },
   ];
 
   return (

@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
 
 const LANGUAGES = [
-  { code: "EN", name: "English", flag: "🇺🇸" },
-  { code: "TH", name: "ไทย", flag: "🇹🇭" },
-  { code: "VN", name: "Tiếng Việt", flag: "🇻🇳" },
+  { code: "en", name: "English", flag: "🇺🇸" },
+  { code: "th", name: "ไทย", flag: "🇹🇭" },
+  { code: "vn", name: "Tiếng Việt", flag: "🇻🇳" },
 ];
 
 export default function LanguageSwitcher({ className = "" }) {

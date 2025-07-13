@@ -8,7 +8,8 @@ export default function SocialLinks({ links = [], title }) {
   
   const defaultLinks = [
     { name: t('linkedin'), href: "https://linkedin.com", color: "bg-[#e7edf4] text-[#0d141c]" },
-    { name: t('github'), href: "https://github.com", color: "bg-[#e7edf4] text-[#0d141c]" }
+    { name: t('github'), href: "https://github.com", color: "bg-[#e7edf4] text-[#0d141c]" },
+    { name: t('line'), href: "https://line.me/ti/p/your-line-id", color: "bg-[#00c300] text-white" }
   ];
 
   const socialLinks = links.length > 0 ? links : defaultLinks;

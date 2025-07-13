@@ -93,7 +93,8 @@
       "title": "Kết nối với tôi",
       "linkedin": "LinkedIn",
       "github": "GitHub",
-      "twitter": "Twitter"
+      "twitter": "Twitter",
+      "line": "Line"
     }
   },
   "projects": {
@@ -110,12 +111,19 @@
       "detailDescription": "Hệ thống này cho phép quản trị viên tạo và phân công công việc cho nhân viên, theo dõi tiến độ qua bảng điều khiển, đồng thời người dùng có thể xem tổng quan công việc cá nhân và đánh dấu hoàn thành công việc.",
       "role": "Với vai trò là lập trình viên full-stack, tôi chịu trách nhiệm phát triển giao diện bảng điều khiển, quản lý người dùng, tính năng quản lý công việc và toàn bộ hệ thống cơ sở dữ liệu."
     },
-    "socialMediaDashboard": {
-      "title": "Bảng điều khiển mạng xã hội",
-      "description": "Tạo bảng điều khiển mạng xã hội để quản lý nhiều tài khoản, lên lịch bài đăng và phân tích số liệu tương tác.",
-      "detailTitle": "Bảng điều khiển quản lý mạng xã hội",
-      "detailDescription": "Phát triển nền tảng quản lý mạng xã hội toàn diện, giúp doanh nghiệp quản lý nhiều tài khoản mạng xã hội, lên lịch bài đăng, theo dõi số liệu tương tác và phân tích hiệu quả trên các nền tảng như Facebook, Twitter, Instagram và LinkedIn.",
-      "role": "Tôi là kiến trúc sư frontend và nhà phát triển chính cho dự án này. Trách nhiệm của tôi bao gồm thiết kế giao diện người dùng, triển khai các thành phần biểu diễn dữ liệu theo thời gian thực, tích hợp với nhiều API mạng xã hội và tạo bảng điều khiển đáp ứng hoạt động mượt mà trên mọi thiết bị."
+    "solvaGoTravel": {
+      "title": "solva-go-travel",
+      "description": "Ứng dụng lập kế hoạch du lịch giúp người dùng khám phá điểm đến, lên kế hoạch chuyến đi và chia sẻ trải nghiệm.",
+      "detailTitle": "Ứng dụng lập kế hoạch du lịch",
+      "detailDescription": "Phát triển một ứng dụng lập kế hoạch du lịch toàn diện cho phép người dùng khám phá điểm đến, tạo lịch trình và chia sẻ trải nghiệm du lịch với người khác.",
+      "role": "Tôi đảm nhiệm vai trò kiến trúc sư frontend và trưởng nhóm phát triển dự án này. Trách nhiệm của tôi bao gồm thiết kế giao diện người dùng, xây dựng bố cục đáp ứng."
+    },
+    "webDevService": {
+      "title": "Dịch vụ phát triển web",
+      "description": "Dịch vụ phát triển web chuyên nghiệp cho doanh nghiệp và startup.",
+      "detailTitle": "Giải pháp phát triển web toàn diện",
+      "detailDescription": "Chúng tôi cung cấp dịch vụ phát triển web từ A đến Z với công nghệ hiện đại.",
+      "role": "Trưởng nhóm phát triển, chịu trách nhiệm kiến trúc, triển khai và vận hành."
     },
     "personalBlog": {
       "title": "Blog cá nhân",

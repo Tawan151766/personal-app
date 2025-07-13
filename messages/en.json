@@ -93,7 +93,8 @@
       "title": "Connect with me",
       "linkedin": "LinkedIn",
       "github": "GitHub",
-      "twitter": "Twitter"
+      "twitter": "Twitter",
+      "line": "Line"
     }
   },
   "projects": {
@@ -110,12 +111,20 @@
       "detailDescription": "This system allows administrators to create tasks, assign them to employees, and monitor progress through a dashboard. Users can also view summaries of their tasks and mark completed tasks.",
       "role": "As a Full Stack Developer, I was responsible for developing the dashboard UI, user management, task handling, and the entire database system."
     },
-    "socialMediaDashboard": {
-      "title": "Social Media Dashboard",
-      "description": "Created a social media dashboard to manage multiple accounts, schedule posts, and analyze engagement metrics.",
-      "detailTitle": "Social Media Management Dashboard",
-      "detailDescription": "Developed a comprehensive social media management platform that allows businesses to manage multiple social accounts, schedule posts, track engagement metrics, and analyze performance across different platforms including Facebook, Twitter, Instagram, and LinkedIn.",
-      "role": "I served as the frontend architect and lead developer for this project. My responsibilities included designing the user interface, implementing real-time data visualization components, integrating with multiple social media APIs, and creating a responsive dashboard that works seamlessly across devices."
+
+    "solvaGoTravel": {
+      "title": "solva-go-travel",
+      "description": "A travel planning application that helps users discover destinations, plan trips, and share experiences.",
+      "detailTitle": "Travel Planning Application",
+      "detailDescription": "Developed a comprehensive travel planning application that allows users to explore destinations, create itineraries, and share their travel experiences with others.",
+      "role": "I served as the frontend architect and lead developer for this project. My responsibilities included designing the user interface, creating a responsive layout.  "
+    },
+    "webDevService": {
+      "title": "Web Development Service",
+      "description": "Professional web development services for businesses and startups.",
+      "detailTitle": "Comprehensive Web Development Solutions",
+      "detailDescription": "We provide end-to-end web development using modern frameworks and best practices.",
+      "role": "Lead developer responsible for architecture, implementation, and deployment."
     },
     "personalBlog": {
       "title": "Personal Blog",
