@@ -2,15 +2,6 @@
 export function getTranslatedProjects(t) {
   return [
     {
-      id: "organization-Todo-System",
-      category: t("categories.webDevelopment"),
-      title: t("organizationTodoSystem.title"),
-      description: t("organizationTodoSystem.description"),
-      image: "/assets/product/app/todo/todo-admin-dashboard.png",
-      heroImage: "/assets/product/app/todo/todo-admin-dashboard.png",
-      buttonText: t("buttonText"),
-    },
-    {
       id: "solva-go-travel",
       category: t("categories.webDevelopment"),
       title: t("solvaGoTravel.title"),
@@ -19,6 +10,16 @@ export function getTranslatedProjects(t) {
       heroImage: "/assets/product/app/booking/home.png",
       buttonText: t("buttonText"),
     },
+    {
+      id: "organization-Todo-System",
+      category: t("categories.webDevelopment"),
+      title: t("organizationTodoSystem.title"),
+      description: t("organizationTodoSystem.description"),
+      image: "/assets/product/app/todo/todo-admin-dashboard.png",
+      heroImage: "/assets/product/app/todo/todo-admin-dashboard.png",
+      buttonText: t("buttonText"),
+    },
+
     {
       id: "web-dev-service",
       category: t("categories.webDevelopment"),
@@ -57,6 +58,7 @@ export function getProjectDetailData(t, id) {
       description: t("solvaGoTravel.detailDescription"),
       role: t("solvaGoTravel.role"),
       heroImage: "/assets/product/app/booking/home.png",
+      previewLink: "https://solva-travel.vercel.app",
       technologies: [
         { category: t("categories.webDevelopment"), name: "Next.js" },
         { category: t("categories.webDevelopment"), name: "tailwindcss" },
@@ -79,10 +81,11 @@ export function getProjectDetailData(t, id) {
       role: t("webDevService.role"),
       heroImage: "/assets/product/app/soval-go-app/1.png",
       technologies: [
-        { category: t("categories.webDevelopment"), name: "Vue.js" },
-        { category: t("categories.webDevelopment"), name: "Vuetify" },
-        { category: t("categories.webDevelopment"), name: "Laravel" },
-        { category: t("categories.webDevelopment"), name: "MySQL" },
+        { category: t("categories.webDevelopment"), name: "Next.js" },
+        { category: t("categories.webDevelopment"), name: "tailwindcss" },
+        { category: t("categories.webDevelopment"), name: "Prisma" },
+        { category: t("categories.webDevelopment"), name: "PostgreSQL" },
+        { category: t("categories.webDevelopment"), name: "JWT" },
         { category: t("categories.webDevelopment"), name: "Git" },
       ],
       galleryImages: [
