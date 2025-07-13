@@ -28,10 +28,13 @@ const RATE_LIMIT_STORAGE_KEY = "contact_form_submissions";
 const RATE_LIMIT_WINDOW = 60000; // 1 minute
 const MAX_SUBMISSIONS_PER_WINDOW = 3;
 
-export default function ContactForm({ onSubmit, className = "" }) {
-  const t = useTranslations('contact.form');
-  const tContact = useTranslations('contact');
-  const tValidation = useTranslations('contact.form.validation');
+// Read Formspree endpoint from environment variable
+const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+
+export default function ContactForm({ className = "" }) {
+  const t = useTranslations("contact.form");
+  const tContact = useTranslations("contact");
+  const tValidation = useTranslations("contact.form.validation");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -81,44 +84,46 @@ export default function ContactForm({ onSubmit, className = "" }) {
     }
   }, [formData, isDirty, isSuccess]);
 
-  // Sanitize input to prevent XSS
+  // Sanitize input to prevent XSS, but allow spaces inside the string
+  // Only remove < and >, and trim at the ends (do not remove spaces inside)
   const sanitizeInput = (value) => {
-    return value
-      .replace(/[<>]/g, "") // Remove potential HTML tags
-      .trim();
+    return value.replace(/[<>]/g, "").replace(/^\s+|\s+$/g, "");
   };
 
   // Enhanced validation with detailed feedback
-  const validateField = useCallback((name, value) => {
-    const rules = VALIDATION_RULES[name];
-    if (!rules) return "";
+  const validateField = useCallback(
+    (name, value) => {
+      const rules = VALIDATION_RULES[name];
+      if (!rules) return "";
 
-    const sanitizedValue = sanitizeInput(value);
+      const sanitizedValue = sanitizeInput(value);
 
-    if (rules.required && !sanitizedValue) {
-      return tValidation(`${name}Required`);
-    }
-
-    if (sanitizedValue.length < rules.min) {
-      return tValidation(`${name}MinLength`);
-    }
-
-    if (sanitizedValue.length > rules.max) {
-      return tValidation(`${name}MaxLength`);
-    }
-
-    if (rules.pattern && !rules.pattern.test(sanitizedValue)) {
-      if (name === "email") {
-        return tValidation('emailInvalid');
+      if (rules.required && !sanitizedValue) {
+        return tValidation(`${name}Required`);
       }
-      if (name === "name") {
-        return tValidation('namePattern');
-      }
-      return tValidation(`${name}Invalid`);
-    }
 
-    return "";
-  }, [tValidation]);
+      if (sanitizedValue.length < rules.min) {
+        return tValidation(`${name}MinLength`);
+      }
+
+      if (sanitizedValue.length > rules.max) {
+        return tValidation(`${name}MaxLength`);
+      }
+
+      if (rules.pattern && !rules.pattern.test(sanitizedValue)) {
+        if (name === "email") {
+          return tValidation("emailInvalid");
+        }
+        if (name === "name") {
+          return tValidation("namePattern");
+        }
+        return tValidation(`${name}Invalid`);
+      }
+
+      return "";
+    },
+    [tValidation]
+  );
 
   const validateForm = useCallback(() => {
     const newErrors = {};
@@ -215,13 +220,11 @@ export default function ContactForm({ onSubmit, className = "" }) {
     // Prevent spam submissions
     const now = Date.now();
     if (now - lastSubmissionTime < 2000) {
-      // 2 second cooldown
       setSubmitError("Please wait a moment before submitting again.");
       return;
     }
 
     if (!validateForm()) {
-      // Focus on first error field
       const firstErrorField = Object.keys(errors)[0];
       if (firstErrorField) {
         const errorElement = formRef.current?.querySelector(
@@ -232,7 +235,6 @@ export default function ContactForm({ onSubmit, className = "" }) {
       return;
     }
 
-    // Check rate limiting
     if (!checkRateLimit()) {
       setSubmitError(
         "Too many submissions. Please wait a minute before trying again."
@@ -245,16 +247,24 @@ export default function ContactForm({ onSubmit, className = "" }) {
     setLastSubmissionTime(now);
 
     try {
-      await onSubmit?.(formData);
+      // Send to Formspree
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to send message. Please try again later.");
+      }
       setIsSuccess(true);
-      localStorage.removeItem("contact_form_draft"); // Clear draft on success
-
-      // Auto reset form after 5 seconds
+      localStorage.removeItem("contact_form_draft");
       setTimeout(() => {
         resetForm();
       }, 5000);
     } catch (error) {
-      console.error("Form submission error:", error);
       setSubmitError(
         error.message ||
           "Failed to send message. Please check your connection and try again."
@@ -336,9 +346,9 @@ export default function ContactForm({ onSubmit, className = "" }) {
             : "text-[#49739c]"
         }`}
       >
-        {current}/{max} {t('characterCount')}
-        {isNearLimit && !isOverLimit && ` (${t('approachingLimit')})`}
-        {isOverLimit && ` (${t('overLimit')})`}
+        {current}/{max} {t("characterCount")}
+        {isNearLimit && !isOverLimit && ` (${t("approachingLimit")})`}
+        {isOverLimit && ` (${t("overLimit")})`}
       </span>
     );
   };
@@ -347,10 +357,10 @@ export default function ContactForm({ onSubmit, className = "" }) {
     <div className={className}>
       <div className="relative">
         <h3 className="text-[#0d141c] tracking-light text-2xl lg:text-3xl font-bold leading-tight px-4 lg:px-6 text-left pb-2 pt-5 lg:pt-8">
-          {tContact('getInTouch')}
+          {tContact("getInTouch")}
         </h3>
         <p className="text-[#0d141c] text-base lg:text-lg font-normal leading-normal pb-3 pt-1 px-4 lg:px-6 max-w-2xl">
-          {tContact('description')}
+          {tContact("description")}
         </p>
 
         {/* Draft indicator */}
@@ -368,7 +378,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
                   clipRule="evenodd"
                 />
               </svg>
-              {t('draft')}
+              {t("draft")}
             </div>
           </div>
         )}
@@ -390,10 +400,10 @@ export default function ContactForm({ onSubmit, className = "" }) {
               </svg>
               <div>
                 <p className="text-green-800 font-medium">
-                  {t('success.title')}
+                  {t("success.title")}
                 </p>
                 <p className="text-green-700 text-sm mt-1">
-                  {t('success.description')}
+                  {t("success.description")}
                 </p>
               </div>
             </div>
@@ -416,9 +426,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
                 />
               </svg>
               <div>
-                <p className="text-red-800 font-medium">
-                  {t('error.title')}
-                </p>
+                <p className="text-red-800 font-medium">{t("error.title")}</p>
                 <p className="text-red-700 text-sm mt-1">{submitError}</p>
               </div>
             </div>
@@ -437,7 +445,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
         <div className="flex max-w-[480px] lg:max-w-2xl flex-wrap items-end gap-4 px-4 lg:px-6 py-3">
           <label className="flex flex-col min-w-40 flex-1 group">
             <span className="text-sm lg:text-base font-medium text-[#0d141c] mb-2 flex items-center">
-              {t('name')} <span className="text-red-500 ml-1">*</span>
+              {t("name")} <span className="text-red-500 ml-1">*</span>
               {formData.name && !errors.name && (
                 <svg
                   className="w-4 h-4 text-green-600 ml-2"
@@ -459,7 +467,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
               onChange={handleInputChange}
               onFocus={() => handleFocus("name")}
               onBlur={() => handleBlur("name")}
-              placeholder={t('namePlaceholder')}
+              placeholder={t("namePlaceholder")}
               className={getInputClassName("name")}
               disabled={isLoading || isSuccess}
               aria-invalid={errors.name ? "true" : "false"}
@@ -489,7 +497,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
                 </span>
               ) : (
                 <span id="name-help" className="text-xs text-[#49739c]">
-                  {t('nameHelp')}
+                  {t("nameHelp")}
                 </span>
               )}
               {getCharacterCount("name")}
@@ -501,7 +509,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
         <div className="flex max-w-[480px] lg:max-w-2xl flex-wrap items-end gap-4 px-4 lg:px-6 py-3">
           <label className="flex flex-col min-w-40 flex-1 group">
             <span className="text-sm lg:text-base font-medium text-[#0d141c] mb-2 flex items-center">
-              {t('email')} <span className="text-red-500 ml-1">*</span>
+              {t("email")} <span className="text-red-500 ml-1">*</span>
               {formData.email && !errors.email && (
                 <svg
                   className="w-4 h-4 text-green-600 ml-2"
@@ -523,7 +531,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
               onChange={handleInputChange}
               onFocus={() => handleFocus("email")}
               onBlur={() => handleBlur("email")}
-              placeholder={t('emailPlaceholder')}
+              placeholder={t("emailPlaceholder")}
               className={getInputClassName("email")}
               disabled={isLoading || isSuccess}
               aria-invalid={errors.email ? "true" : "false"}
@@ -553,7 +561,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
                 </span>
               ) : (
                 <span id="email-help" className="text-xs text-[#49739c]">
-                  {t('emailHelp')}
+                  {t("emailHelp")}
                 </span>
               )}
               {getCharacterCount("email")}
@@ -565,7 +573,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
         <div className="flex max-w-[480px] lg:max-w-2xl flex-wrap items-end gap-4 px-4 lg:px-6 py-3">
           <label className="flex flex-col min-w-40 flex-1 group">
             <span className="text-sm lg:text-base font-medium text-[#0d141c] mb-2 flex items-center">
-              {t('message')} <span className="text-red-500 ml-1">*</span>
+              {t("message")} <span className="text-red-500 ml-1">*</span>
               {formData.message && !errors.message && (
                 <svg
                   className="w-4 h-4 text-green-600 ml-2"
@@ -586,7 +594,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
               onChange={handleInputChange}
               onFocus={() => handleFocus("message")}
               onBlur={() => handleBlur("message")}
-              placeholder={t('messagePlaceholder')}
+              placeholder={t("messagePlaceholder")}
               className={getTextareaClassName()}
               disabled={isLoading || isSuccess}
               aria-invalid={errors.message ? "true" : "false"}
@@ -618,7 +626,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
                 </span>
               ) : (
                 <span id="message-help" className="text-xs text-[#49739c]">
-                  {t('messageHelp')}
+                  {t("messageHelp")}
                 </span>
               )}
               {getCharacterCount("message")}
@@ -652,6 +660,11 @@ export default function ContactForm({ onSubmit, className = "" }) {
                   ? "hover:shadow-xl"
                   : ""
               }`}
+              onKeyDown={(e) => {
+                if (e.code === "Space" || e.key === " " || e.key === "Spacebar") {
+                  e.preventDefault();
+                }
+              }}
             >
               {isLoading ? (
                 <>
@@ -675,7 +688,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
                       d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                     ></path>
                   </svg>
-                  <span className="truncate">{t('sending')}</span>
+                  <span className="truncate">{t("sending")}</span>
                 </>
               ) : isSuccess ? (
                 <>
@@ -690,7 +703,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="truncate">{t('sent')}</span>
+                  <span className="truncate">{t("sent")}</span>
                 </>
               ) : (
                 <>
@@ -707,7 +720,7 @@ export default function ContactForm({ onSubmit, className = "" }) {
                       d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
                     />
                   </svg>
-                  <span className="truncate">{t('sendMessage')}</span>
+                  <span className="truncate">{t("sendMessage")}</span>
                 </>
               )}
             </button>
