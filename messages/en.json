@@ -133,6 +133,13 @@
       "detailDescription": "Created a modern personal blog platform with a custom content management system. The blog features a clean, responsive design, markdown support, comment system, and SEO optimization. Users can easily create, edit, and publish blog posts with rich media content.",
       "role": "I was the sole developer on this project, handling both design and development. I built the custom CMS from scratch, implemented the frontend blog interface, created an admin dashboard for content management, and optimized the site for search engines and performance."
     },
+    "aiTravelChatAssistant": {
+      "title": "AI Travel Chat Assistant",
+      "description": "Developed a travel chat assistant using Next.js (React) integrated with the OpenAI LLM API, enabling users to ask real-time travel-related questions.",
+      "detailTitle": "Intelligent Travel Chatbot Assistant",
+      "detailDescription": "This project is an AI Travel Chat Assistant built with Next.js (React) and connected to the OpenAI LLM API. It allows users to chat and ask about travel information such as tourist attractions, itineraries, restaurant recommendations, or other travel details in real time through an intuitive chat interface.",
+      "role": "I was responsible for designing and developing the entire application, from building the UI with React, integrating the OpenAI API, managing chat state, to optimizing the user experience."
+    },
     "mobileApp": {
       "title": "Fitness Tracking App",
       "description": "Built a cross-platform mobile app for fitness tracking with workout plans, progress monitoring, and social features.",

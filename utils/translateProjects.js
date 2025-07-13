@@ -19,7 +19,6 @@ export function getTranslatedProjects(t) {
       heroImage: "/assets/product/app/todo/todo-admin-dashboard.png",
       buttonText: t("buttonText"),
     },
-
     {
       id: "web-dev-service",
       category: t("categories.webDevelopment"),
@@ -29,11 +28,36 @@ export function getTranslatedProjects(t) {
       heroImage: "/assets/product/app/soval-go-app/1.png",
       buttonText: t("buttonText"),
     },
+    {
+      id: "ai-travel-chat-assistant",
+      category: t("categories.webDevelopment"),
+      title: t("aiTravelChatAssistant.title"),
+      description: t("aiTravelChatAssistant.description"),
+      image: "/assets/product/app/ai-travel-chat/cover.png",
+      heroImage: "/assets/product/app/ai-travel-chat/cover.png",
+      buttonText: t("buttonText"),
+    },
   ];
 }
 
 export function getProjectDetailData(t, id) {
   const projectMap = {
+    "ai-travel-chat-assistant": {
+      title: t("aiTravelChatAssistant.detailTitle"),
+      description: t("aiTravelChatAssistant.detailDescription"),
+      role: t("aiTravelChatAssistant.role"),
+      heroImage: "/assets/product/app/ai-travel-chat/cover.png",
+      previewLink: "https://ai-travel-chat-assistance.vercel.app/",
+      technologies: [
+        { category: t("categories.webDevelopment"), name: "Next.js" },
+        { category: t("categories.webDevelopment"), name: "OpenAI API" },
+        { category: t("categories.webDevelopment"), name: "Tailwind CSS" },
+      ],
+      galleryImages: [
+        "/assets/product/app/ai-travel-chat/cover.png",
+        "/assets/product/app/ai-travel-chat/chat.png",
+      ],
+    },
     "organization-Todo-System": {
       title: t("organizationTodoSystem.detailTitle"),
       description: t("organizationTodoSystem.detailDescription"),

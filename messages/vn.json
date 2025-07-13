@@ -132,6 +132,13 @@
       "detailDescription": "Xây dựng nền tảng blog cá nhân hiện đại với CMS tùy chỉnh. Blog có thiết kế sạch sẽ, đáp ứng, hỗ trợ markdown, hệ thống bình luận và tối ưu SEO. Người dùng có thể tạo, chỉnh sửa và xuất bản bài viết cùng nội dung đa phương tiện một cách dễ dàng.",
       "role": "Tôi là nhà phát triển duy nhất trong dự án này, đảm nhiệm từ thiết kế đến phát triển. Tôi xây dựng CMS tùy chỉnh từ đầu, tạo giao diện frontend của blog, phát triển bảng điều khiển quản trị để quản lý nội dung và tối ưu trang cho công cụ tìm kiếm cũng như hiệu năng."
     },
+    "aiTravelChatAssistant": {
+      "title": "Trợ lý Chat AI Du lịch",
+      "description": "Xây dựng trợ lý chat du lịch bằng Next.js (React) tích hợp OpenAI LLM API, cho phép người dùng hỏi đáp thông tin du lịch theo thời gian thực.",
+      "detailTitle": "Chatbot trợ lý du lịch thông minh",
+      "detailDescription": "Dự án này là AI Travel Chat Assistant phát triển bằng Next.js (React) và tích hợp OpenAI LLM API, giúp người dùng trò chuyện để hỏi thông tin về du lịch như địa điểm, lịch trình, gợi ý nhà hàng hoặc các thông tin di chuyển khác theo thời gian thực qua giao diện chat thân thiện.",
+      "role": "Tôi chịu trách nhiệm thiết kế và phát triển toàn bộ ứng dụng, từ xây dựng giao diện React, tích hợp API OpenAI, quản lý trạng thái chat đến tối ưu hóa trải nghiệm người dùng."
+    },
     "mobileApp": {
       "title": "Ứng dụng theo dõi tập luyện",
       "description": "Tạo ứng dụng di động đa nền tảng để theo dõi tập luyện với kế hoạch tập luyện, giám sát tiến trình và các tính năng xã hội.",
